@@ -66,6 +66,15 @@ nav a {
   background-color: #fff;
   text-align: center;
 }
+.menu .item h3,
+.menu .item p {
+  color: white;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
 
 .menu h2 {
   font-size: 36px;
@@ -100,6 +109,7 @@ nav a {
 }
 
 
+
 .contact {
   padding: 40px 20px;
   background-color: #ffe8cc;
@@ -118,26 +128,10 @@ footer {
   padding: 15px;
 }
 
-.menu .item {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 200px;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
 
 /* Add background images for each coffee item */
 .espresso {
-  background-image: url('images/espresso.jpeg');
+  background-image: url('images/Espresso.jpeg');
 }
 
 .cappuccino {
