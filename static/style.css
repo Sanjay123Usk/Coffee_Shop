@@ -125,13 +125,12 @@ footer {
   background-color: #6f4e37;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 14px;
 }
 
 
-/* Add background images for each coffee item */
 .espresso {
-  background-image: url('images/Espresso.jpeg');
+  background-image: url('images/Espressoo.jpeg');
 }
 
 .cappuccino {
