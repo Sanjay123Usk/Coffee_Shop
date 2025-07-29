@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cofee-Shop</title>
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">☕ Tas-Tea</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  <section id="home" class="hero">
+    <h1>Welcome to TAS-TEA</h1>
+    <p><h4>Where Every Sip Tells A Story.</h4></p>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="item espresso">
+        <h3>Espresso</h3>
+        <p>Strong & bold flavor.</p>
+      </div>
+      <div class="item cappuccino">
+        <h3>Cappuccino</h3>
+        <p>Perfect blend of espresso & milk foam.</p>
+      </div>
+      <div class="item latte">
+        <h3>Latte</h3>
+        <p>Smooth and creamy delight.</p>
+      </div>
+      <div class="item Pastries">
+        <h3>Pastries</h3>
+        <p>Croissants, muffins, scones, danishes, cookies.</p>
+      </div>
+      <div class="item Sandwiches">
+        <h3>Sandwiches</h3>
+        <p>Simple options like grilled cheese, BLTs, or more elaborate choices.</p>
+      </div>
+      <div class="item Others">
+        <h3>Others</h3>
+        <p>Wraps, salads, yogurt parfaits</p>
+      </div>
+    </div>
+  </section>
+<div id="cart-message" class="cart-message"></div>
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Mail: <a href="mailto:uppala.sanjaykumar@gmail.com">uppala.sanjaykumar@gmail.com</a></p>
+    <p>Phone: +91-9494095319</p>
+  </section>
+
+  <footer>
+  <p>&copy; <span id="year"></span> TAS-TEA. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  const menuItems = document.querySelectorAll('.menu .item');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Uncomment this if you want the animation to happen only once:
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  menuItems.forEach(item => {
+    observer.observe(item);
+  });
+</script>
+<script>
+  // Automatically add button to each item
+  document.querySelectorAll('.menu .item').forEach(item => {
+    const name = item.querySelector('h3')?.innerText || "Item";
+    const btn = document.createElement('button');
+    btn.textContent = 'Add to Cart';
+    btn.onclick = () => addToCart(name);
+    item.appendChild(btn);
+  });
+
+  // Cart message function
+  function addToCart(itemName) {
+    const cartMsg = document.getElementById('cart-message');
+    cartMsg.innerText = `${itemName} Added To Cart!`;
+    cartMsg.style.display = 'block';
+    setTimeout(() => {
+      cartMsg.style.display = 'none';
+    }, 2000);
+  }
+</script>
+
+</body>
+</html>

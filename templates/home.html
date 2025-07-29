@@ -1,0 +1,176 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+ 
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: radial-gradient(black, transparent), url("static/images/intro.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+
+  .intro {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+  }
+  .rainbow-text {
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+    .container {
+        margin-top: 40px;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 0px 25px gray;
+        width: 90%;
+        max-width: 350px;
+        color: #e5f905;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    a {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 6px;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    a:hover {
+        background-color: #0056b3;
+    }
+    .break-small {
+  font-family: 'Dancing Script', cursive;
+}
+
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    a {
+      padding: 10px;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .intro, .container {
+      width: 100%;
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+    }
+  }
+  @media (max-width: 425px) {
+  .intro h1 {
+    font-size: 1.3rem;
+  }
+
+  .intro h3 {
+    font-size: 0.9rem;
+  }
+
+  a {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro h1 {
+    font-size: 1.2rem;
+  }
+
+  .intro h3 {
+    font-size: 0.85rem;
+  }
+
+  a {
+    font-size: 0.85rem;
+    padding: 7px;
+  }
+}
+
+@media (max-width: 320px) {
+  .break-small::before {
+    content: "\A"; /* inserts a line break */
+    white-space: pre;
+  }
+
+  .intro-heading {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+</style>
+
+</head>
+<body>
+    <section id="home" class="intro">
+<h1 class="rainbow-text">TAS-TEA: Not Just A Cafe <span class="break-small">An Experience</span></h1>
+<h3 class="rainbow-text">Sign Up and Taste the Difference.</h3>
+
+  </section>
+    <div class="container">
+        <h1>Welcome</h1>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </div>
+</body>
+</body>
+</html>

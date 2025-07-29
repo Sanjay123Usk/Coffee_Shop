@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #b59c83;
+  color: #333;
+}
+
+header {
+  background-color: #6f4e37;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero {
+  background-image: url("images/logo3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 4%;
+  text-align: center;
+  position: relative;
+  text-align: center;
+  background-position: center 40%;
+  color: black;
+}
+
+.hero h1 {
+  font-size: 48px;
+   padding: 5px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+ 
+  color: black;
+}
+
+.menu {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.menu h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.menu .item {
+  flex: 1 1 calc(33.33% - 40px); /* 3 per row by default */
+  max-width: calc(33.33% - 40px);
+  min-width: 250px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+
+.contact {
+  padding: 40px 20px;
+  background-color: #ffe8cc;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #6f4e37;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.menu .item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Add background images for each coffee item */
+.espresso {
+  background-image: url('images/espresso.jpeg');
+}
+
+.cappuccino {
+  background-image: url('images/Cappuccino.jpeg');
+}
+
+.latte {
+  background-image: url('images/Latte.jpeg');
+}
+.Pastries{
+    background-image: url(images/Pastries.jpeg);
+}
+
+.Sandwiches{
+    background-image: url(images/sandwiches.jpeg);
+}
+
+.Others{
+    background-image: url(images/others.jpeg);
+}
+
+.menu .item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  
+  z-index: 0;
+  pointer-events: none;
+
+}
+
+.menu .item h3,
+.menu .item p {
+  position: relative;
+  z-index: 1;
+}
+
+.menu .item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.menu .item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cart-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 999;
+}
